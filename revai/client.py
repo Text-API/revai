@@ -9,7 +9,7 @@ def connect(access_token):
 def get_jobs(revai, limit=1000, last_job='', per_minute=0.035):
     getcontext().prec = 2
     while True:
-        jobs = revai.get_list_of_jobs(limit=2, starting_after = last_job)
+        jobs = revai.get_list_of_jobs(limit=limit, starting_after = last_job)
         if not jobs:
             break
         for job in jobs:
